@@ -10,6 +10,16 @@ body {
     line-height: 1.6;
 }
 
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.playfair{
+     font-family: "Playfair Display", serif;
+}
+
+
 /* Container and Layout */
 .container {
     max-width: 1200px;
@@ -405,10 +415,6 @@ input:focus {
     }
 }
 
-/* Dark Mode Support (if needed) */
-@media (prefers-color-scheme: dark) {
-    /* Add dark mode styles if required */
-}
 
 /* Utility Classes for Responsive Design */
 .responsive-text {
@@ -458,6 +464,7 @@ input:focus {
     max-width: 100%;
     height: auto;
     display: block;
+
 }
 
 /* Container Queries (for modern browsers) */
@@ -485,4 +492,9 @@ html {
 
 .will-change-opacity {
     will-change: opacity;
+}
+
+/* About Section Dancing Script Font */
+.about-dancing {
+    font-family: 'Dancing Script', cursive;
 }
