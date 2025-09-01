@@ -1,0 +1,488 @@
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Container and Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hero Image Styles */
+.hero-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 9999px;
+    border: 4px solid #fbcfe8;
+    animation: float 4s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Feature Images */
+.feature-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.feature-img:hover {
+    transform: scale(1.1);
+}
+
+/* Button Styles */
+button {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: all 0.3s ease;
+    transform-origin: top;
+}
+
+#mobile-menu.hidden {
+    transform: scaleY(0);
+    opacity: 0;
+}
+
+#mobile-menu:not(.hidden) {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+/* Accordion Styles */
+.accordion-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Styles */
+.faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Testimonial Stars Animation */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.stars span {
+    animation: pop 0.6s ease-in-out;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .hero-img {
+        width: 450px;
+        height: 450px;
+    }
+    
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* Desktop (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hero-img {
+        width: 380px;
+        height: 380px;
+    }
+}
+
+/* Tablet (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-img {
+        width: 320px;
+        height: 320px;
+    }
+    
+    /* Adjust grid layouts for tablet */
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Large (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .hero-img {
+        width: 280px;
+        height: 280px;
+    }
+    
+    /* Stack hero section */
+    .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    /* Adjust feature grid */
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    /* Single column testimonials */
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Small (up to 575px) */
+@media (max-width: 575px) {
+    .hero-img {
+        width: 240px;
+        height: 240px;
+    }
+    
+    /* Typography adjustments */
+    .text-5xl {
+        font-size: 2rem !important;
+        line-height: 2.5rem !important;
+    }
+    
+    .text-4xl {
+        font-size: 1.75rem !important;
+        line-height: 2.25rem !important;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem !important;
+        line-height: 2rem !important;
+    }
+    
+    .text-2xl {
+        font-size: 1.25rem !important;
+        line-height: 1.75rem !important;
+    }
+    
+    /* Padding adjustments */
+    .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .py-16 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .py-12 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    /* Button adjustments */
+    button {
+        min-height: 44px;
+        font-size: 0.875rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Feature grid single column */
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Countdown adjustments */
+    .countdown-item {
+        min-width: 50px;
+        padding: 0.5rem;
+    }
+    
+    .countdown-number {
+        font-size: 1rem !important;
+    }
+    
+    .countdown-label {
+        font-size: 0.75rem !important;
+    }
+    
+    /* Card padding */
+    .card {
+        padding: 1rem;
+    }
+    
+    /* Accordion adjustments */
+    .accordion-content {
+        padding: 0.75rem;
+    }
+}
+
+/* Extra Small Mobile (up to 375px) */
+@media (max-width: 375px) {
+    .hero-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Further reduce text sizes */
+    .text-5xl {
+        font-size: 1.75rem !important;
+        line-height: 2.25rem !important;
+    }
+    
+    .text-4xl {
+        font-size: 1.5rem !important;
+        line-height: 2rem !important;
+    }
+    
+    /* Reduce padding */
+    .px-4 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Smaller countdown items */
+    .countdown-item {
+        min-width: 45px;
+        padding: 0.375rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Improve touch targets */
+    button, a, input, label {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .feature-img:hover {
+        transform: none;
+    }
+    
+    button:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .card:hover {
+        transform: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Ensure images look crisp on retina displays */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .py-16 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .py-12 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero-img {
+        animation: none;
+    }
+}
+
+/* Focus Styles for Keyboard Navigation */
+button:focus,
+a:focus,
+input:focus {
+    outline: 2px solid #ec4899;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .hero-img {
+        animation: none;
+    }
+    
+    button {
+        display: none;
+    }
+    
+    #mobile-menu {
+        display: none;
+    }
+    
+    .shadow-lg,
+    .shadow-md {
+        box-shadow: none;
+    }
+}
+
+/* Dark Mode Support (if needed) */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles if required */
+}
+
+/* Utility Classes for Responsive Design */
+.responsive-text {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.responsive-spacing {
+    padding: clamp(1rem, 4vw, 2rem);
+}
+
+.responsive-gap {
+    gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+/* Grid System Enhancements */
+.grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+@media (max-width: 576px) {
+    .grid-responsive {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Flexbox Utilities */
+.flex-responsive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flex-responsive > * {
+    flex: 1 1 250px;
+}
+
+@media (max-width: 576px) {
+    .flex-responsive > * {
+        flex: 1 1 100%;
+    }
+}
+
+/* Image Responsive Utilities */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Container Queries (for modern browsers) */
+@container (max-width: 600px) {
+    .container-responsive {
+        padding: 0.5rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Animation Performance */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
